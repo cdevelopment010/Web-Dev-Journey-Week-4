@@ -7,6 +7,7 @@
 html, body {
     height: 100%; 
     width: 100%; 
+    font-family: 'Montserrat', sans-serif;
 }
 
 main {
@@ -23,14 +24,24 @@ h1 {
 }
 
 form {
-    display: flex; 
-    flex-direction: column;
-    justify-content: space-evenly;
+    /* display: flex; 
+    flex-direction: column; */
+    
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    justify-content: center;
     align-items: center;
     margin-top: 10vh;
     background-color: white; 
     border-radius: 50px 50px 0 0;
     height: 80%; 
+}
+
+.form-input-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%; 
 }
 
 .form-item {
@@ -48,7 +59,7 @@ input {
 
 }
 
-a, button {
+.btn {
     width: 100%; 
     background-color: #3d405b;
     border: 1px solid transparent; 
@@ -56,4 +67,48 @@ a, button {
     text-decoration: none;
     text-align: center;
     margin-top: 10px;
+    height: 5vh;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: inherit;
+}
+
+
+
+
+/* Media queries */
+
+@media screen and (min-width: 48em) {
+
+    form {
+        display: grid; 
+        grid-template-columns: repeat(2, minmax(300px,1fr));
+    }
+    
+    .form-input-section {
+        width: 100%; 
+    }
+    .form-item {
+        width: 100%;
+    }
+
+    input {
+        width: 90%; 
+        margin-top: 0.5rem;
+    }
+}
+
+@media screen and (min-width: 90em) { 
+
+    form {
+        width: 60%;
+        margin: 10vh auto 0 auto;
+    }
+
+    .btn {
+        width: 90%; 
+    }
 }
